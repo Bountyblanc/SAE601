@@ -3,7 +3,7 @@
 
 Application web générant automatiquement des séances d’entraînement personnalisées en badminton selon le niveau, les objectifs et le temps disponible de chaque joueur.
 
-![Preview](capture.png) <!-- remplace par une capture d'écran de ton projet -->
+
 
 ## Fonctionnalités
 - Formulaire interactif pour saisir le niveau, les objectifs et le temps disponible
@@ -16,8 +16,6 @@ Application web générant automatiquement des séances d’entraînement person
 - **React** pour l’interface utilisateur
 - **Zod** pour la validation des formulaires
 
-## Lien en ligne
-[Voir le projet en ligne](https://badminton-generator.vercel.app/) <!-- remplace par ton URL Vercel -->
 
 ## Lancer le projet en local
 ```bash
