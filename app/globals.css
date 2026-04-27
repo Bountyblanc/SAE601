@@ -85,3 +85,20 @@ main {
 .badge-dot {
   @apply h-2 w-2 rounded-full bg-emerald-400 shadow-[0_0_12px_rgba(52,211,153,0.8)];
 }
+
+@keyframes loader-swing {
+  0% {
+    transform: rotate(-8deg) translateY(0);
+  }
+  50% {
+    transform: rotate(8deg) translateY(-6px);
+  }
+  100% {
+    transform: rotate(-8deg) translateY(0);
+  }
+}
+
+.loader-swing {
+  animation: loader-swing 1.2s ease-in-out infinite;
+  transform-origin: 50% 20%;
+}

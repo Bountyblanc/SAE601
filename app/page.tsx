@@ -2,18 +2,47 @@
 
 import Link from "next/link"
 import Image from "next/image"
+import { useEffect, useState } from "react"
 
 export default function Home() {
+  const [isLoading, setIsLoading] = useState(true)
+
+  useEffect(() => {
+    const timer = window.setTimeout(() => {
+      setIsLoading(false)
+    }, 1200)
+
+    return () => {
+      window.clearTimeout(timer)
+    }
+  }, [])
+
   return (
-    <main className="min-h-screen">
-      <div className="max-w-5xl mx-auto px-4 py-12 md:py-16 space-y-16">
+    <>
+      {isLoading && (
+        <div
+          className="fixed inset-0 z-50 flex items-center justify-center bg-slate-950"
+          aria-hidden="true"
+        >
+          <Image
+            src="/img/logo-transparent.png"
+            alt=""
+            width={170}
+            height={170}
+            className="loader-swing"
+            priority
+          />
+        </div>
+      )}
+      <main className="min-h-screen">
+        <div className="max-w-5xl mx-auto px-4 py-12 md:py-16 space-y-16">
         {/* Hero */}
         <section className="grid gap-10 lg:grid-cols-[1.1fr_minmax(0,0.9fr)] items-center">
           <div className="space-y-6">
             <div className="flex items-center gap-3">
               <div className="rounded-xl bg-white/10 backdrop-blur p-2.5 ring-1 ring-white/10">
                 <Image
-                  src="/img/logo.png"
+                  src="/img/logo-transparent.png"
                   alt="Logo Badminton"
                   width={48}
                   height={48}
@@ -181,7 +210,8 @@ export default function Home() {
             Créer ma séance
           </Link>
         </section>
-      </div>
-    </main>
+        </div>
+      </main>
+    </>
   )
 }
